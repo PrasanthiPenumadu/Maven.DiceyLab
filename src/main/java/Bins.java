@@ -13,7 +13,10 @@ public class Bins {
     }
 
     public int getBin(int i) {
+        Integer numberOfTens=0;
  binres=res[i - numberOfDice];    //result of 10 stored in res[5] as i min value starts from 5
+        numberOfTens=res[10-numberOfDice];
+        System.out.println("number Of Tens"+numberOfTens);
         return res[i - numberOfDice];
     }
 public int incrementBin(int inc){
