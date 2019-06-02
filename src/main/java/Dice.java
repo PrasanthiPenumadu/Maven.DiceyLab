@@ -1,4 +1,4 @@
-//import java.math
+
 public class Dice {
     int dies = 0;
 

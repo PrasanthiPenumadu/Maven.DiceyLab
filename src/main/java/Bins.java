@@ -2,26 +2,33 @@
 public class Bins {
 
 
-    int res[];
+    int resultArray[];
     int numberOfDice;
-    int binres=0;
+    Dice dice;
+
     public Bins(int num1, int num2) {
-        int num3 = num2 - num1 + 1;//array length for 2 to 12 12-2+1=11
-        res = new int[num3];
+        int num3 = num2 -num1+1;//array length for 2 to 12 12-2+1=11
+        resultArray = new int[num3]; //build array of appropriate length
         this.numberOfDice = num1;
+        dice = new Dice(numberOfDice);
 
     }
 
     public int getBin(int i) {
-        Integer numberOfTens=0;
- binres=res[i - numberOfDice];    //result of 10 stored in res[5] as i min value starts from 5
-        numberOfTens=res[10-numberOfDice];
-        System.out.println("number Of Tens"+numberOfTens);
-        return res[i - numberOfDice];
-    }
-public int incrementBin(int inc){
 
-      return binres+10;
-}
+        return resultArray[i - numberOfDice]; //result of 10 stored in res[5] as i min value starts from 5,arr[0]
+    }
+
+    public void runAndTrackBin(int numberOfRolls) {
+        for (int x = 0; x < numberOfRolls; x++) {
+            int i = dice.tossAndSum();
+            resultArray[i - numberOfDice] = resultArray[i - numberOfDice] + 1;
+        }
+    }
+
+    public int incrementBin(int inc) {
+
+        return getBin(inc) + 10;
+    }
 
 }
