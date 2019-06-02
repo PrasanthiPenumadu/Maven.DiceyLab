@@ -1,26 +1,24 @@
 
 public class Bins {
 
-   Dice dice;
-int maxCount;
-int res[];
-int res1;
-    public Bins(int num1,int num2){
-    this.dice=new Dice(num1);
-    this.maxCount=num2;
-    }
-    public  int getBin(int i) {
-            res = new int[maxCount];
-            for (int x = 0; x < 1000; x++) {
-                 i = dice.tossAndSum();
-                res[i - 1] = res[i - 1] + 1;
-            }
-            res1=res[i];
-            return res[i];
-        }
 
+    int res[];
+    int numberOfDice;
+    int binres=0;
+    public Bins(int num1, int num2) {
+        int num3 = num2 - num1 + 1;//array length for 2 to 12 12-2+1=11
+        res = new int[num3];
+        this.numberOfDice = num1;
 
-    public int incrementBin(int inc){
-    return res1+inc;
     }
+
+    public int getBin(int i) {
+ binres=res[i - numberOfDice];    //result of 10 stored in res[5] as i min value starts from 5
+        return res[i - numberOfDice];
+    }
+public int incrementBin(int inc){
+
+      return binres+10;
+}
+
 }
