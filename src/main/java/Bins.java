@@ -20,9 +20,9 @@ public class Bins {
     }
 
     public void runAndTrackBin(int numberOfRolls) {
-        for (int x = 0; x < numberOfRolls; x++) {
+        for (int x = 1; x <= numberOfRolls; x++) {
             int i = dice.tossAndSum();
-            resultArray[i - numberOfDice] = resultArray[i - numberOfDice] + 1;
+            resultArray[i - numberOfDice]++;//increments the no.of occurances of i 
         }
     }
 
