@@ -37,7 +37,6 @@ public class Simulation {
         double m = 0.00;
         for (int i = 0; i < bin.resultArray.length; i++) {
             j = (bin.resultArray[i] * 14) / max;
-
             m = (double) bin.resultArray[i] / numberOfRolls;
             System.out.printf("%4d  : %10d:  %4.2f ", i + numberOfDice, bin.resultArray[i], m);
             System.out.println(star.substring(0, j));

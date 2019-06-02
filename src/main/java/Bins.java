@@ -22,7 +22,7 @@ public class Bins {
     public void runAndTrackBin(int numberOfRolls) {
         for (int x = 1; x <= numberOfRolls; x++) {
             int i = dice.tossAndSum();
-            resultArray[i - numberOfDice]++;//increments the no.of occurances of i 
+            resultArray[i - numberOfDice]++;//increments the no.of occurances of i
         }
     }
 
